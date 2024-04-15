@@ -1,0 +1,185 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\i3332\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\i3332\\backend\\dtos\\moviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:dtos\\moviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\i3332\\backend\\controllers\\usercartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:controllers\\usercartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\i3332\\backend\\dtos\\usercartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:dtos\\usercartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\i3332\\backend\\controllers\\mediacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:controllers\\mediacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\i3332\\backend\\dtos\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:dtos\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\i3332\\backend\\entities\\media.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:entities\\media.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\i3332\\backend\\context\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:context\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\i3332\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\i3332\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserCartController.cs",
+              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Controllers\\UserCartController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserCartController.cs",
+              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Controllers\\UserCartController.cs",
+              "RelativeToolTip": "Controllers\\UserCartController.cs",
+              "ViewState": "AQIAAAkAAAAAAwAAAEAlwKoAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T15:54:55.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MovieDto.cs",
+              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Dtos\\MovieDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\MovieDto.cs",
+              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Dtos\\MovieDto.cs",
+              "RelativeToolTip": "Dtos\\MovieDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T15:52:51.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BookDto.cs",
+              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Dtos\\BookDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\BookDto.cs",
+              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Dtos\\BookDto.cs",
+              "RelativeToolTip": "Dtos\\BookDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T15:51:40.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T16:10:28.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserCartDto.cs",
+              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Dtos\\UserCartDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\UserCartDto.cs",
+              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Dtos\\UserCartDto.cs",
+              "RelativeToolTip": "Dtos\\UserCartDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T15:55:43.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MediaController.cs",
+              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Controllers\\MediaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MediaController.cs",
+              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Controllers\\MediaController.cs",
+              "RelativeToolTip": "Controllers\\MediaController.cs",
+              "ViewState": "AQIAAIgAAAAAgGZmZmbwv/4AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T15:48:44.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Media.cs",
+              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Entities\\Media.cs",
+              "RelativeDocumentMoniker": "Entities\\Media.cs",
+              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Entities\\Media.cs",
+              "RelativeToolTip": "Entities\\Media.cs",
+              "ViewState": "AQIAACAAAACAAAAAAAAfwEIAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T13:21:53.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Context\\DataContext.cs",
+              "RelativeDocumentMoniker": "Context\\DataContext.cs",
+              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Context\\DataContext.cs",
+              "RelativeToolTip": "Context\\DataContext.cs",
+              "ViewState": "AQIAAAUAAABQMzMzM3MvwA4AAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T15:35:31.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-08T15:44:50.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\I3332\\backend\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-12T14:33:01.031Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
