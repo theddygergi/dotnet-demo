@@ -7,9 +7,8 @@ function Login() {
   const [wrong, setWrong] = useState(false);
   const [error, setError] = useState(false);
   const [data, setData] = useState({
-    username: "",
+    email: "",
     password: "",
-    isAdmin: false,
   });
   const handleChange = (e) => {
     const value = e.target.value;
@@ -22,9 +21,8 @@ function Login() {
   const HandleLogin = async (e) => {
     e.preventDefault();
     console.log(data);
-    //Bearer with auth
     try {
-      const res = await axios.get("https://localhost:7030/login");
+      const res = await axios.post("https://localhost:7030/login", data);
       const responseData = res.data; // Use a different variable name here
       console.log(res);
       if (res.status === 200) {
@@ -46,12 +44,12 @@ function Login() {
         <div className="form">
           <form onSubmit={HandleLogin}>
             <div>
-              <label htmlFor="email">UserName</label>
+              <label htmlFor="email">Email</label>
               <div>
                 <input
                   className="inputRegister"
-                  id="username"
-                  name="username"
+                  id="email"
+                  name="email"
                   type="text"
                   required
                   onChange={handleChange}

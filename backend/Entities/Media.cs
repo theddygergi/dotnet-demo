@@ -1,12 +1,13 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using backend.Context;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace backend.Entities
 {
-    public class User
+    /*public class User
     {
         [Key]
         public int UserId { get; set; }
@@ -14,7 +15,7 @@ namespace backend.Entities
         public string Email { get; set; }
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
-    }
+    }*/
 
     public class Media
     {
@@ -62,7 +63,7 @@ namespace backend.Entities
         public int MediaId { get; set; }
 
         // Use IdentityUser instead of User
-        public IdentityUser User { get; set; }
+        public ApplicationUser User { get; set; }
 
         public Media Media { get; set; }
         public int Ranking { get; set; }
