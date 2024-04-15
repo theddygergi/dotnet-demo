@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace backend.Context
 {
-    public class DataContext : IdentityDbContext<ApplicationUser, IdentityRole, string>
+    public class DataContext : IdentityDbContext<IdentityUser>
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
         public DbSet<Media> Media { get; set; }

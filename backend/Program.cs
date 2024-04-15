@@ -31,13 +31,16 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-builder.Services.AddControllersWithViews();
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+/*builder.Services.AddControllersWithViews();
+*/
+
+builder.Services.AddIdentityApiEndpoints<IdentityUser>()
     .AddEntityFrameworkStores<DataContext>()
     .AddDefaultTokenProviders();
 
+
 builder.Services.AddControllersWithViews().AddControllersAsServices();
-builder.Services.AddAuthorization();
+//builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -55,7 +58,7 @@ app.UseCors(options =>
     options.AllowAnyOrigin();
 });
 
-app.MapIdentityApi<UserIdentityExtra>();
+app.MapIdentityApi<IdentityUser>();
 
 app.UseHttpsRedirection();
 

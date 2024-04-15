@@ -1,21 +1,46 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Security.Cryptography;
+using System.Text;
 using backend.Context;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace backend.Entities
 {
-    /*public class User
+    public class Admin
     {
         [Key]
-        public int UserId { get; set; }
+        public int AdminId { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }
-        public bool IsAdmin { get; set; }
-    }*/
+        public string PasswordHash { get; set; }
+        public bool isAdmin { get; set; } = true;
+
+        public void SetPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                PasswordHash = Convert.ToBase64String(hashedBytes);
+            }
+        }
+
+        // Method to verify login
+        public bool VerifyPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                string hashedInput = Convert.ToBase64String(hashedBytes);
+                return PasswordHash == hashedInput;
+            }
+        }
+    }
+
+
+
 
     public class Media
     {
@@ -63,7 +88,7 @@ namespace backend.Entities
         public int MediaId { get; set; }
 
         // Use IdentityUser instead of User
-        public ApplicationUser User { get; set; }
+        public IdentityUser User { get; set; }
 
         public Media Media { get; set; }
         public int Ranking { get; set; }
