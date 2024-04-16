@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { usersBaseUrl } from "../constants/url.constant";
+import { usersBaseUrl } from "../../constants/url.constant";
 
-function Login() {
+function LoginUser() {
   const [wrong, setWrong] = useState(false);
   const [error, setError] = useState(false);
   const [data, setData] = useState({
@@ -38,7 +38,7 @@ function Login() {
     <>
       <div>
         <div>
-          <h1>Log in</h1>
+          <h1>Log in as user</h1>
         </div>
 
         <div className="form">
@@ -75,9 +75,15 @@ function Login() {
               </button>
             </div>
           </form>
-          <p>Forgot password?</p>
+          <Link to="/forgotPassword">Forgot password?</Link>
           <button className="formButton" onClick={() => navigate("/register")}>
-            +
+            Register
+          </button>
+          <button
+            className="formButton"
+            onClick={() => navigate("/loginAdmin")}
+          >
+            Login as Admin
           </button>
           {wrong && (
             <div>
@@ -95,4 +101,4 @@ function Login() {
     </>
   );
 }
-export default Login;
+export default LoginUser;

@@ -1,7 +1,7 @@
 import UserCartBook from "./UserCartBook";
 import UserCartMovie from "./UserCartMovie";
 import "./UserCart.css";
-import Layout from "../layout/layout";
+import Layout from "../../layout/layout";
 
 const UserCart = () => {
   return (

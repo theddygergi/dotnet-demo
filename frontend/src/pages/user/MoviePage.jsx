@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-import { mediaBaseUrl } from "../constants/url.constant";
+import { mediaBaseUrl } from "../../constants/url.constant";
 import "./MoviePage.css";
-import Layout from "../layout/layout";
-import { userCartBaseUrl } from "../constants/url.constant";
+import Layout from "../../layout/layout";
+import { userCartBaseUrl } from "../../constants/url.constant";
 import Swal from "sweetalert2";
 
-
 const MoviePage = () => {
-  
   const userId = 1;
   const location = useLocation();
   const nav = useNavigate();
@@ -48,9 +46,9 @@ const MoviePage = () => {
       console.log(res.status, res.statusText);
       if (res.status == 200) {
         Swal.fire({
-          icon:"success",
-          title: "Movie added successfully to cart"
-      });
+          icon: "success",
+          title: "Movie added successfully to cart",
+        });
       }
     } catch (error) {
       console.log(error);

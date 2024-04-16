@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
 import { useNavigate, useLocation } from "react-router-dom";
-import { userCartBaseUrl, mediaBaseUrl } from "../constants/url.constant";
+import { userCartBaseUrl, mediaBaseUrl } from "../../constants/url.constant";
 import "./UserCart.css";
-import Layout from "../layout/layout";
-import BookRanking from "../layout/BookRanking";
+import Layout from "../../layout/layout";
+import BookRanking from "../../layout/BookRanking";
 import Swal from "sweetalert2";
 
 const UserCartMovie = () => {
@@ -66,14 +66,17 @@ const UserCartMovie = () => {
       const response = await axios.delete(
         userCartBaseUrl + "DeleteCartItem/" + cartItemId
       );
-      
+
       setCart((prevCart) =>
         prevCart.filter((cartItem) => cartItem.CartItemId !== cartItemId)
       );
-      setTimeout(Swal.fire({
-        icon: "success",
-        title: "Movie removed successfully from the cart",
-      }), 250000)
+      setTimeout(
+        Swal.fire({
+          icon: "success",
+          title: "Movie removed successfully from the cart",
+        }),
+        250000
+      );
       window.location.reload();
     } catch (error) {
       console.log(error);

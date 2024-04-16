@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { usersBaseUrl } from "../constants/url.constant";
+import { usersBaseUrl } from "../../constants/url.constant";
 
 const Register = () => {
   const [User, setUser] = useState({
@@ -17,7 +17,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await axios.post("https://localhost:7030/register", User);
-      navigate("/login");
+      navigate("/loginUser");
     } catch (err) {
       console.log(err);
     }

@@ -30,6 +30,9 @@ function MainNavigation() {
             <Link to="/usercart/:id">Cart</Link>
           </li>
           <li>
+            <Link to="/loginAdmin">Login as admin </Link>
+          </li>
+          <li>
             <ThemeSwitcher />
           </li>
           <li>

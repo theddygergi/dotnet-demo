@@ -1,13 +1,13 @@
 // BookList.js
 import React from "react";
-import styles from "./BookListMenu.module.css";
+import styles from "./MovieListMenu.module.css";
 import { useNavigate } from "react-router-dom";
 
 const MovieList = ({ movies }) => {
   const nav = useNavigate();
   return (
-    <div className={styles["book-list-container"]}>
-      <ul className={styles["book-list"]}>
+    <div className={styles["movie-list-container"]}>
+      <ul className={styles["movie-list"]}>
         {movies.map((movie) => (
           <li key={movie.mediaId} className={styles["movie-item"]}>
             <div className={styles["movie-cover-container"]}>

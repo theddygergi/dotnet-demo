@@ -1,32 +1,29 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Layout from "../layout/layout";
+import Layout from "../../layout/layout";
 import axios from "axios";
-import { mediaBaseUrl } from "../constants/url.constant";
+import { mediaBaseUrl } from "../../constants/url.constant";
 import Swal from "sweetalert2";
 
-//import {Edit, Delete} from '@mui/icons-material'
-
-const Books = () => {
-  const [books, setBooks] = useState([]);
+const Movies = () => {
+  const [movies, setMovies] = useState([]);
   const navigate = useNavigate();
-
   useEffect(() => {
-    const fetchAllBooks = async () => {
+    const fetchAllMovies = async () => {
       try {
-        const res = await axios.get(mediaBaseUrl + "GetAllBooks");
-        setBooks(res.data);
+        const res = await axios.get(mediaBaseUrl + "GetAllMovies");
+        setMovies(res.data);
       } catch (err) {
         console.log(err);
       }
     };
-    fetchAllBooks();
+    fetchAllMovies();
   }, []);
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(mediaBaseUrl + "DeleteBook/" + id);
+      await axios.delete(mediaBaseUrl + "DeleteMovie/" + id);
       setTimeout(
         Swal.fire({
           icon: "success",
@@ -42,38 +39,38 @@ const Books = () => {
   return (
     <Layout>
       <div>
-        <h1>Books Shop</h1>
-        <div className="books">
-          {books.map((book) => (
-            <div className="book" key={book.mediaId}>
-              {book.cover && (
+        <h1>Movies Shop</h1>
+        <div className="movies">
+          {movies.map((movie) => (
+            <div className="movie" key={movie.mediaId}>
+              {movie.cover && (
                 <img
-                  src={book.cover}
+                  src={movie.cover}
                   alt=""
-                  onClick={() => navigate(`/viewbook/${book.mediaId}`)}
+                  onClick={() => navigate(`/viewmovie/${movie.mediaId}`)}
                 />
               )}
               <button
                 className="delete"
-                onClick={() => handleDelete(book.mediaId)}
+                onClick={() => handleDelete(movie.mediaId)}
               >
                 Delete
               </button>
               <button
                 className="update"
-                onClick={() => navigate(`updatebook/${book.mediaId}`)}
+                onClick={() => navigate("updatemovie/" + movie.mediaId)}
               >
                 Update
               </button>
             </div>
           ))}
         </div>
-        <button className="Button" onClick={() => navigate("/addbooks")}>
-          Add new Book
+        <button className="Button" onClick={() => navigate("/addmovies")}>
+          Add new Movie
         </button>
       </div>
     </Layout>
   );
 };
 
-export default Books;
+export default Movies;

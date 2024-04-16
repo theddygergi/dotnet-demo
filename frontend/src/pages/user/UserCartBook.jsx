@@ -2,12 +2,11 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
 import { useNavigate, useLocation } from "react-router-dom";
-import { userCartBaseUrl, mediaBaseUrl } from "../constants/url.constant";
+import { userCartBaseUrl, mediaBaseUrl } from "../../constants/url.constant";
 import "./UserCart.css";
-import Layout from "../layout/layout";
-import BookRanking from "../layout/BookRanking";
+import Layout from "../../layout/layout";
+import BookRanking from "../../layout/BookRanking";
 import Swal from "sweetalert2";
-
 
 const UserCartBook = () => {
   const [cart, setCart] = useState([]);
@@ -66,14 +65,17 @@ const UserCartBook = () => {
       const response = await axios.delete(
         userCartBaseUrl + "DeleteCartItem/" + cartItemId
       );
-      
+
       setCart((prevCart) =>
         prevCart.filter((cartItem) => cartItem.CartItemId !== cartItemId)
       );
-      setTimeout(Swal.fire({
-        icon: "success",
-        title: "Book removed successfully from the cart",
-      }), 500000)
+      setTimeout(
+        Swal.fire({
+          icon: "success",
+          title: "Book removed successfully from the cart",
+        }),
+        500000
+      );
       window.location.reload();
     } catch (error) {
       console.log(error);
@@ -81,55 +83,59 @@ const UserCartBook = () => {
   };
 
   return (
-      <div className="products">
-        {cart.length === 0 ? (
-          <h2>No Book Added</h2>
-        ) : (
-          <div>
-            <div className="table-wrapper">
-              <h2>Book Cart</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Cover</th>
-                    <th>Title</th>
-                    <th>Creator</th>
-                    <th>Date Added</th>
-                    <th>Ranking</th>
-                    <th>Operations</th>
+    <div className="products">
+      {cart.length === 0 ? (
+        <h2>No Book Added</h2>
+      ) : (
+        <div>
+          <div className="table-wrapper">
+            <h2>Book Cart</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Cover</th>
+                  <th>Title</th>
+                  <th>Creator</th>
+                  <th>Date Added</th>
+                  <th>Ranking</th>
+                  <th>Operations</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cart.map((cartItem) => (
+                  <tr key={cartItem.cartItemId}>
+                    {mediaMap[cartItem.mediaId] ? (
+                      <>
+                        <td>
+                          <img src={mediaMap[cartItem.mediaId].cover} />
+                        </td>
+                        <td>{mediaMap[cartItem.mediaId].title}</td>
+                        <td>{mediaMap[cartItem.mediaId].creator}</td>
+                        <td>{moment(cartItem.dateAdded).fromNow()}</td>
+                        <td>
+                          <BookRanking
+                            maxStars={5}
+                            cartItemId={cartItem.cartItemId}
+                            userId={userId}
+                          />
+                        </td>
+                        <td>
+                          <button
+                            onClick={() => handleRemove(cartItem.cartItemId)}
+                          >
+                            Remove
+                          </button>
+                        </td>
+                      </>
+                    ) : null}
                   </tr>
-                </thead>
-                <tbody>
-                  {cart.map((cartItem) => (
-                    <tr key={cartItem.cartItemId}>
-                      {mediaMap[cartItem.mediaId] ? (
-                        <>
-                          <td>
-                            <img src={mediaMap[cartItem.mediaId].cover} />
-                          </td>
-                          <td>{mediaMap[cartItem.mediaId].title}</td>
-                          <td>{mediaMap[cartItem.mediaId].creator}</td>
-                          <td>{moment(cartItem.dateAdded).fromNow()}</td>
-                          <td>
-                            <BookRanking maxStars={5} cartItemId={cartItem.cartItemId} userId={userId} />
-                          </td>
-                          <td>
-                            <button
-                              onClick={() => handleRemove(cartItem.cartItemId)}
-                            >
-                              Remove
-                            </button>
-                          </td>
-                        </>
-                      ) : null}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                ))}
+              </tbody>
+            </table>
           </div>
-        )}
-      </div>
+        </div>
+      )}
+    </div>
   );
 };
 export default UserCartBook;

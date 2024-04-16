@@ -699,3 +699,7 @@ C:\Users\eddyg\Desktop\Semester6\dotnet-demo\backend\obj\Debug\net8.0\refint\bac
 C:\Users\eddyg\Desktop\Semester6\dotnet-demo\backend\obj\Debug\net8.0\backend.pdb
 C:\Users\eddyg\Desktop\Semester6\dotnet-demo\backend\obj\Debug\net8.0\backend.genruntimeconfig.cache
 C:\Users\eddyg\Desktop\Semester6\dotnet-demo\backend\obj\Debug\net8.0\ref\backend.dll
+C:\Users\eddyg\Desktop\Semester6\dotnet-demo\backend\bin\Debug\net8.0\System.Net.Http.Formatting.dll
+C:\Users\eddyg\Desktop\Semester6\dotnet-demo\backend\bin\Debug\net8.0\System.Web.Http.dll
+C:\Users\eddyg\Desktop\Semester6\dotnet-demo\backend\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\eddyg\Desktop\Semester6\dotnet-demo\backend\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

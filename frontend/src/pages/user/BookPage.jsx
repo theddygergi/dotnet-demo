@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-import { mediaBaseUrl, userCartBaseUrl } from "../constants/url.constant";
+import { mediaBaseUrl, userCartBaseUrl } from "../../constants/url.constant";
 import "./BookPage.css";
-import Layout from "../layout/layout";
+import Layout from "../../layout/layout";
 import Swal from "sweetalert2";
-
 
 const BookPage = () => {
   const nav = useNavigate();
   const location = useLocation();
-  const userId = 1
+  const userId = 1;
   const bookId = location.pathname.split("/")[2];
   const [book, setBook] = useState(null);
   const [expanded, setExpanded] = useState(false);
@@ -46,9 +45,9 @@ const BookPage = () => {
       console.log(res.status, res.statusText);
       if (res.status == 200) {
         Swal.fire({
-          icon:"success",
-          title: "Book added successfully to cart"
-      });
+          icon: "success",
+          title: "Book added successfully to cart",
+        });
       }
     } catch (error) {
       console.log(error);

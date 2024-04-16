@@ -1,5 +1,5 @@
 import React from "react";
-import BookRankingPage from "../layout/BookRankingPage";
+import BookRankingPage from "../../layout/BookRankingPage";
 import "./MovieList.css";
 
 const MovieList = ({ movies }) => {
@@ -8,7 +8,8 @@ const MovieList = ({ movies }) => {
       {movies.map((movie) => (
         <li key={movie.mediaId}>
           <img src={movie.cover} alt={movie.title} />
-          <BookRankingPage maxStars={5} stars={movie.ranking} /> {/* Pass stars and maxStars props */}
+          <BookRankingPage maxStars={5} stars={movie.ranking} />{" "}
+          {/* Pass stars and maxStars props */}
         </li>
       ))}
     </ul>
