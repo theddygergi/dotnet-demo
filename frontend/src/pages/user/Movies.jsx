@@ -5,6 +5,7 @@ import Layout from "../../layout/layout";
 import axios from "axios";
 import { mediaBaseUrl } from "../../constants/url.constant";
 import Swal from "sweetalert2";
+import "./Movies.css";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
