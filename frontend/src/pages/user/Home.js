@@ -4,6 +4,7 @@ import axios from "axios";
 import { mediaBaseUrl } from "../../constants/url.constant";
 import BookListMenu from "./BookListMenu";
 import MovieList from "./MovieListMenu";
+import "./Home.css";
 
 function Home() {
   const [newBooks, setNewBooks] = useState([]);

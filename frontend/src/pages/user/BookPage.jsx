@@ -73,7 +73,7 @@ const BookPage = () => {
           <img src={book.cover} alt={book.title} className="book-cover" />
           <div className="book-info">
             <h2 className="book-title">{book.title}</h2>
-            <p className="book-description">{book.description}</p>
+            <p>{book.description}</p>
             <p>Year of Release: {book.year}</p>
             <p>Number of Pages: {book.nbPages}</p>
           </div>

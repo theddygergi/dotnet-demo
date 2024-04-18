@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "backend.Controllers.AdminController",
+    "Method": "CreateAdmin",
+    "RelativePath": "api/Admin/createAdmin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "backend.Controllers.AdminCreationModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.AdminController",
+    "Method": "LoginAdmin",
+    "RelativePath": "api/Admin/loginAdmin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "backend.Controllers.AdminCreationModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "backend.Controllers.MediaController",
     "Method": "CreateBook",
     "RelativePath": "api/Media/CreateBook",
@@ -131,6 +163,37 @@
   },
   {
     "ContainingType": "backend.Controllers.MediaController",
+    "Method": "GetCartItems",
+    "RelativePath": "api/Media/GetCartItems2/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "mediaType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[backend.Entities.UserCart, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "backend.Controllers.MediaController",
     "Method": "GetMovieById",
     "RelativePath": "api/Media/GetMovieById/{id}",
     "HttpMethod": "GET",
@@ -146,6 +209,46 @@
     "ReturnTypes": [
       {
         "Type": "backend.Entities.Media",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "backend.Controllers.MediaController",
+    "Method": "GetNewBooks",
+    "RelativePath": "api/Media/GetNewBooks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[backend.Entities.Book, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "backend.Controllers.MediaController",
+    "Method": "GetNewMovies",
+    "RelativePath": "api/Media/GetNewMovies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[backend.Entities.Movie, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -207,7 +310,7 @@
     "Parameters": [
       {
         "Name": "userId",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
@@ -249,7 +352,7 @@
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -267,6 +370,22 @@
   },
   {
     "ContainingType": "backend.Controllers.UserCartController",
+    "Method": "DeleteCartItem",
+    "RelativePath": "api/UserCart/DeleteCartItem/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "backend.Controllers.UserCartController",
     "Method": "DeleteItemByMediaId",
     "RelativePath": "api/UserCart/DeleteCartItem/{userId}/{mediaId}",
     "HttpMethod": "DELETE",
@@ -275,7 +394,7 @@
     "Parameters": [
       {
         "Name": "userId",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       },
       {
@@ -289,13 +408,44 @@
   {
     "ContainingType": "backend.Controllers.UserCartController",
     "Method": "GetUserCartByUserId",
-    "RelativePath": "api/UserCart/GetCartItem/{id}",
+    "RelativePath": "api/UserCart/GetCartItems/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[backend.Entities.UserCart, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "backend.Controllers.UserCartController",
+    "Method": "GetRanking",
+    "RelativePath": "api/UserCart/GetRanking/{userId}/{userCartId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "userCartId",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -303,75 +453,135 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "backend.Controllers.UsersController",
-    "Method": "AddUser",
-    "RelativePath": "api/Users/AddUser",
+    "ContainingType": "backend.Controllers.UserCartController",
+    "Method": "GetRankingsBooks",
+    "RelativePath": "api/UserCart/GetRankingsBooks/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "backend.Controllers.UserCartController",
+    "Method": "GetRankingsMovies",
+    "RelativePath": "api/UserCart/GetRankingsMovies/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Microsoft.AspNetCore.Routing.IdentityApiEndpointRouteBuilderExtensions\u002B\u003C\u003Ec__1\u00601[[Microsoft.AspNetCore.Identity.IdentityUser, Microsoft.Extensions.Identity.Stores, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+    "Method": "\u003CMapIdentityApi\u003Eb__1_3",
+    "RelativePath": "confirmEmail",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "changedEmail",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Microsoft.AspNetCore.Routing.IdentityApiEndpointRouteBuilderExtensions\u002B\u003C\u003Ec__DisplayClass1_0\u00601[[Microsoft.AspNetCore.Identity.IdentityUser, Microsoft.Extensions.Identity.Stores, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+    "Method": "\u003CMapIdentityApi\u003Eb__6",
+    "RelativePath": "forgotPassword",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "resetRequest",
+        "Type": "Microsoft.AspNetCore.Identity.Data.ForgotPasswordRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
+    "ContainingType": "backend.Controllers.ForgotPasswordController",
+    "Method": "ForgotPassword",
+    "RelativePath": "fp",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "backend.Dtos.UserDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "backend.Controllers.UsersController",
-    "Method": "UpdatePassword",
-    "RelativePath": "api/Users/ChangeUserPassword/{id}",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "dto",
-        "Type": "backend.Dtos.UserDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "backend.Controllers.UsersController",
-    "Method": "UpdatePassword",
-    "RelativePath": "api/Users/DeleteUser/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "backend.Controllers.UsersController",
-    "Method": "GetUserById",
-    "RelativePath": "api/Users/GetUser/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "request",
+        "Type": "backend.Controllers.MyForgotPasswordRequest",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "backend.Entities.User",
+        "Type": "System.Web.Http.IHttpActionResult",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -382,53 +592,242 @@
     ]
   },
   {
-    "ContainingType": "backend.Controllers.UsersController",
-    "Method": "GetUserById",
-    "RelativePath": "api/Users/GetUser/{userName}/{password}",
-    "HttpMethod": "GET",
-    "IsController": true,
+    "ContainingType": "Microsoft.AspNetCore.Routing.IdentityApiEndpointRouteBuilderExtensions\u002B\u003C\u003Ec__1\u00601[[Microsoft.AspNetCore.Identity.IdentityUser, Microsoft.Extensions.Identity.Stores, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+    "Method": "\u003CMapIdentityApi\u003Eb__1_1",
+    "RelativePath": "login",
+    "HttpMethod": "POST",
+    "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userName",
-        "Type": "System.String",
-        "IsRequired": true
+        "Name": "login",
+        "Type": "Microsoft.AspNetCore.Identity.Data.LoginRequest",
+        "IsRequired": false
       },
       {
-        "Name": "password",
-        "Type": "System.String",
-        "IsRequired": true
+        "Name": "useCookies",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "useSessionCookies",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "backend.Entities.User",
+        "Type": "Microsoft.AspNetCore.Authentication.BearerToken.AccessTokenResponse",
         "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "StatusCode": 200
       }
     ]
   },
   {
-    "ContainingType": "backend.Controllers.UsersController",
-    "Method": "GetAllUsers",
-    "RelativePath": "api/Users/GetUsers",
+    "ContainingType": "Microsoft.AspNetCore.Routing.IdentityApiEndpointRouteBuilderExtensions\u002B\u003C\u003Ec__1\u00601[[Microsoft.AspNetCore.Identity.IdentityUser, Microsoft.Extensions.Identity.Stores, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+    "Method": "\u003CMapIdentityApi\u003Eb__1_8",
+    "RelativePath": "manage/2fa",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tfaRequest",
+        "Type": "Microsoft.AspNetCore.Identity.Data.TwoFactorRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Identity.Data.TwoFactorResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Microsoft.AspNetCore.Routing.IdentityApiEndpointRouteBuilderExtensions\u002B\u003C\u003Ec__1\u00601[[Microsoft.AspNetCore.Identity.IdentityUser, Microsoft.Extensions.Identity.Stores, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+    "Method": "\u003CMapIdentityApi\u003Eb__1_9",
+    "RelativePath": "manage/info",
     "HttpMethod": "GET",
-    "IsController": true,
+    "IsController": false,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[backend.Entities.User, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Microsoft.AspNetCore.Identity.Data.InfoResponse",
         "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Microsoft.AspNetCore.Routing.IdentityApiEndpointRouteBuilderExtensions\u002B\u003C\u003Ec__DisplayClass1_0\u00601[[Microsoft.AspNetCore.Identity.IdentityUser, Microsoft.Extensions.Identity.Stores, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+    "Method": "\u003CMapIdentityApi\u003Eb__10",
+    "RelativePath": "manage/info",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "infoRequest",
+        "Type": "Microsoft.AspNetCore.Identity.Data.InfoRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Identity.Data.InfoResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Microsoft.AspNetCore.Routing.IdentityApiEndpointRouteBuilderExtensions\u002B\u003C\u003Ec__DisplayClass1_0\u00601[[Microsoft.AspNetCore.Identity.IdentityUser, Microsoft.Extensions.Identity.Stores, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+    "Method": "\u003CMapIdentityApi\u003Eb__2",
+    "RelativePath": "refresh",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "refreshRequest",
+        "Type": "Microsoft.AspNetCore.Identity.Data.RefreshRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Authentication.BearerToken.AccessTokenResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Microsoft.AspNetCore.Routing.IdentityApiEndpointRouteBuilderExtensions\u002B\u003C\u003Ec__DisplayClass1_0\u00601[[Microsoft.AspNetCore.Identity.IdentityUser, Microsoft.Extensions.Identity.Stores, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+    "Method": "\u003CMapIdentityApi\u003Eb__0",
+    "RelativePath": "register",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registration",
+        "Type": "Microsoft.AspNetCore.Identity.Data.RegisterRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
+    "ContainingType": "Microsoft.AspNetCore.Routing.IdentityApiEndpointRouteBuilderExtensions\u002B\u003C\u003Ec__DisplayClass1_0\u00601[[Microsoft.AspNetCore.Identity.IdentityUser, Microsoft.Extensions.Identity.Stores, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+    "Method": "\u003CMapIdentityApi\u003Eb__5",
+    "RelativePath": "resendConfirmationEmail",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "resendRequest",
+        "Type": "Microsoft.AspNetCore.Identity.Data.ResendConfirmationEmailRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Microsoft.AspNetCore.Routing.IdentityApiEndpointRouteBuilderExtensions\u002B\u003C\u003Ec__1\u00601[[Microsoft.AspNetCore.Identity.IdentityUser, Microsoft.Extensions.Identity.Stores, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+    "Method": "\u003CMapIdentityApi\u003Eb__1_7",
+    "RelativePath": "resetPassword",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "resetRequest",
+        "Type": "Microsoft.AspNetCore.Identity.Data.ResetPasswordRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Http.HttpValidationProblemDetails",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
       }
     ]
   }

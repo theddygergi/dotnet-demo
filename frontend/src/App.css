@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -72,4 +74,9 @@ body {
 .button-theme:hover {
   color: #ffffff;
   cursor: pointer;
+}
+
+p{
+  font-size: 15px;
+  max-width: 95vw;
 }

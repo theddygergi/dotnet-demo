@@ -9,6 +9,8 @@
     padding: 0;
     margin: 0;
     display: flex; /* Display the list items as flex items */
+    width: 100vw;
+    overflow: auto;
 }
 
 .movie-item {
