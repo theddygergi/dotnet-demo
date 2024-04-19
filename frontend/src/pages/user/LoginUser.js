@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { usersBaseUrl } from "../../constants/url.constant";
+import UserContext from "./UserContext";
 
 function LoginUser() {
   const [wrong, setWrong] = useState(false);
   const [error, setError] = useState(false);
+  const {userId, setUserId}= useContext(UserContext);
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -23,6 +25,8 @@ function LoginUser() {
     console.log(data);
     try {
       const res = await axios.post("https://localhost:7030/login", data);
+      const res1= await axios.post("https://localhost:7030/api/User/login", data);
+      setUserId(res1.data.id);
       const responseData = res.data; // Use a different variable name here
       console.log(res);
       if (res.status === 200) {
@@ -70,7 +74,7 @@ function LoginUser() {
               </div>
             </div>
             <div>
-              <button type="submit" className="Button">
+              <button type="submit" className="Button" onClick={HandleLogin}>
                 Login
               </button>
             </div>

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace backend.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -79,6 +79,7 @@ namespace backend.Migrations
                     Cover = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
                     DateAdded = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    url = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Discriminator = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     NbPages = table.Column<int>(type: "int", nullable: true),
                     DurationMinutes = table.Column<int>(type: "int", nullable: true)

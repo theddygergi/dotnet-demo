@@ -73,6 +73,12 @@ const AddMovies = () => {
           onChange={handleChange}
           name="year"
         />
+        <input
+            type="text"
+            placeholder="Trailer URL"
+            onChange={handleChange}
+            name="url"
+          />
         <button className="formButton" onClick={handleClick}>
           Add
         </button>

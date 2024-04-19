@@ -12,8 +12,8 @@ using backend.Context;
 namespace backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240415185429_init")]
-    partial class init
+    [Migration("20240419110259_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -289,6 +289,10 @@ namespace backend.Migrations
 
                     b.Property<int>("Year")
                         .HasColumnType("int");
+
+                    b.Property<string>("url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MediaId");
 

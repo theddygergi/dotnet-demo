@@ -3,7 +3,10 @@ import classes from "./MainNavigation.module.css";
 import { Menu } from "@mui/icons-material";
 import ThemeSwitcher from "./ThemeSwitcher";
 import Dashboard from "./Dashboard";
+import UserContext from "../pages/user/UserContext";
+import { useContext } from "react";
 function MainNavigation() {
+  const {userId}= useContext(UserContext);
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
@@ -27,7 +30,7 @@ function MainNavigation() {
             <Link to="/ranking">Ranking</Link>
           </li>
           <li>
-            <Link to="/usercart/:id">Cart</Link>
+            <Link to={`/usercart/${userId}`}>Cart</Link>
           </li>
           <li>
             <Link to="/loginAdmin">Login as admin </Link>

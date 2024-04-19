@@ -60,7 +60,7 @@ namespace backend.Entities
         public int Year { get; set; }
         [Required]
         public DateTime DateAdded { get; set; }
-
+        public string url { get; set; }
 
     }
 

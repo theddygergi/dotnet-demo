@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext} from "react";
 import BookList from "./BookList";
 import MovieList from "./MovieList";
 import Layout from "../../layout/layout";
 import axios from "axios";
 import { userCartBaseUrl } from "../../constants/url.constant";
+import UserContext from "./UserContext";
 const Ranking = () => {
   const [movies, setMovies] = useState([]);
   const [books, setBooks] = useState([]);
+  const {userId}= useContext(UserContext)
 
   const getBooks = async () => {
     try {
-      const res = await axios.get(userCartBaseUrl + "GetRankingsBooks/1");
+      const res = await axios.get(userCartBaseUrl + "GetRankingsBooks/"+userId);
       setBooks(res.data);
     } catch (error) {
       console.log(error);
@@ -19,7 +21,7 @@ const Ranking = () => {
 
   const getMovies = async () => {
     try {
-      const res = await axios.get(userCartBaseUrl + "GetRankingsMovies/1");
+      const res = await axios.get(userCartBaseUrl + "GetRankingsMovies/"+userId);
       setMovies(res.data);
     } catch (error) {
       console.log(error);

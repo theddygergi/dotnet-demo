@@ -135,6 +135,10 @@ namespace backend.Controllers
             {
                 book.Cover = dto.Cover;
             }
+            if (dto.url != null)
+            {
+                book.url = dto.url;
+            }
             else
             {
                 return BadRequest("No fields provided for update");

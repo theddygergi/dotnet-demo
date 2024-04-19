@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext} from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { mediaBaseUrl, userCartBaseUrl } from "../../constants/url.constant";
 import "./BookPage.css";
 import Layout from "../../layout/layout";
 import Swal from "sweetalert2";
+import UserContext from "./UserContext";
 
 const BookPage = () => {
   const nav = useNavigate();
   const location = useLocation();
-  const userId = 1;
+  const {userId}= useContext(UserContext) ;
   const bookId = location.pathname.split("/")[2];
   const [book, setBook] = useState(null);
   const [expanded, setExpanded] = useState(false);
@@ -17,7 +18,7 @@ const BookPage = () => {
 
   const userCartObj = {
     mediaId: bookId,
-    userId: 1,
+    userId: userId,
   };
 
   useEffect(() => {

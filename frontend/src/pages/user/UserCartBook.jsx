@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import moment from "moment";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -7,13 +7,14 @@ import "./UserCart.css";
 import Layout from "../../layout/layout";
 import BookRanking from "../../layout/BookRanking";
 import Swal from "sweetalert2";
+import UserContext from "./UserContext";
 
 const UserCartBook = () => {
   const [cart, setCart] = useState([]);
   const [mediaMap, setMediaMap] = useState({});
   const location = useLocation();
   const redirect = useNavigate();
-  const userId = 1;
+  const {userId}= useContext(UserContext);
 
   const fetchCart = async () => {
     try {

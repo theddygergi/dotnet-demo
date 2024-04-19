@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext} from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { mediaBaseUrl } from "../../constants/url.constant";
@@ -6,9 +6,10 @@ import "./MoviePage.css";
 import Layout from "../../layout/layout";
 import { userCartBaseUrl } from "../../constants/url.constant";
 import Swal from "sweetalert2";
+import UserContext from "./UserContext";
 
 const MoviePage = () => {
-  const userId = 1;
+  const {userId}= useContext(UserContext);
   const location = useLocation();
   const nav = useNavigate();
   const movieId = location.pathname.split("/")[2];
@@ -18,7 +19,7 @@ const MoviePage = () => {
 
   const userCartObj = {
     mediaId: movieId,
-    userId: 1,
+    userId: userId,
   };
 
   useEffect(() => {

@@ -287,6 +287,10 @@ namespace backend.Migrations
                     b.Property<int>("Year")
                         .HasColumnType("int");
 
+                    b.Property<string>("url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("MediaId");
 
                     b.ToTable("Media");

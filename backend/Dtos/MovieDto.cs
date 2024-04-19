@@ -10,6 +10,7 @@
         public int DurationMinutes { get; set; }
         public int Year { get; set; }
         public DateTime DateAdded { get; set; }
+        public string url { get; set; }
 
     }
 }

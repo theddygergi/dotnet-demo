@@ -301,6 +301,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "UserController",
+    "Method": "Login",
+    "RelativePath": "api/User/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "backend.Controllers.UserCartController",
     "Method": "AddRanking",
     "RelativePath": "api/UserCart/AddRanking/{userId}/{cartItemId}/{rankId}",
