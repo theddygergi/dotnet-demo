@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
-import { Menu } from "@mui/icons-material";
+import { Menu, LibraryBooks, LocalMovies, AddCircleOutline, AddCircle, AddShoppingCart, StarRate, Login, LockOpen, Home, Search  } from "@mui/icons-material";
 import ThemeSwitcher from "./ThemeSwitcher";
 import Dashboard from "./Dashboard";
 import UserContext from "../pages/user/UserContext";
@@ -10,30 +10,33 @@ function MainNavigation() {
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <Link to="/">LibraFlick</Link>
+        <Link to="/"><Home/></Link>
       </div>
       <nav>
         <ul>
           <li>
-            <Link to="/movies">Movies</Link>
+            <Link to="/movies"><LocalMovies/></Link>
           </li>
           <li>
-            <Link to="/books">Books</Link>
+            <Link to="/books"><LibraryBooks/></Link>
           </li>
           <li>
-            <Link to="/addmovies">Add New Movies</Link>
+            <Link to="/addmovies"><AddCircle/></Link>
           </li>
           <li>
-            <Link to="/addbooks">Add New Books</Link>
+            <Link to="/addbooks"><AddCircleOutline/></Link>
           </li>
           <li>
-            <Link to="/ranking">Ranking</Link>
+            <Link to="/ranking"><StarRate/></Link>
           </li>
           <li>
-            <Link to={`/usercart/${userId}`}>Cart</Link>
+            <Link to={`/usercart/${userId}`}><AddShoppingCart/></Link>
           </li>
           <li>
-            <Link to="/loginAdmin">Login as admin </Link>
+            <Link to="/loginAdmin"><LockOpen/></Link>
+          </li>
+          <li>
+            <Link to =""><Search /></Link>
           </li>
           <li>
             <ThemeSwitcher />
@@ -41,6 +44,7 @@ function MainNavigation() {
           <li>
             <Dashboard />
           </li>
+          
         </ul>
       </nav>
     </header>

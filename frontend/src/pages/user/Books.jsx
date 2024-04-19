@@ -5,7 +5,7 @@ import Layout from "../../layout/layout";
 import axios from "axios";
 import { mediaBaseUrl } from "../../constants/url.constant";
 import Swal from "sweetalert2";
-import "./Books.css"
+import "./Books.css";
 
 //import {Edit, Delete} from '@mui/icons-material'
 
@@ -27,15 +27,44 @@ const Books = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(mediaBaseUrl + "DeleteBook/" + id);
-      setTimeout(
-        Swal.fire({
-          icon: "success",
-          title: "Movie deleted successfully",
-        }),
-        500000
-      );
-      window.location.reload();
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: "btn btn-success",
+          cancelButton: "btn btn-danger",
+        },
+        buttonsStyling: false,
+      });
+      swalWithBootstrapButtons
+        .fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Yes, delete it!",
+          cancelButtonText: "No, cancel!",
+          reverseButtons: true,
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            axios.delete(mediaBaseUrl + "DeleteBook/" + id);
+            swalWithBootstrapButtons.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+              timer: 1000,
+            });
+            window.location.reload();
+          } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+          ) {
+            swalWithBootstrapButtons.fire({
+              title: "Cancelled",
+              text: "Your imaginary file is safe :)",
+              icon: "error",
+            });
+          }
+        });
     } catch (err) {
       console.log(err);
     }

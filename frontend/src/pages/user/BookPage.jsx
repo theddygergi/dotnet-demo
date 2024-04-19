@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { mediaBaseUrl, userCartBaseUrl } from "../../constants/url.constant";
@@ -10,11 +10,11 @@ import UserContext from "./UserContext";
 const BookPage = () => {
   const nav = useNavigate();
   const location = useLocation();
-  const {userId}= useContext(UserContext) ;
+  const { userId } = useContext(UserContext);
   const bookId = location.pathname.split("/")[2];
   const [book, setBook] = useState(null);
-  const [expanded, setExpanded] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
+  const [showPDF, setShowPDF] = useState(false); // State to track whether to show the PDF
 
   const userCartObj = {
     mediaId: bookId,
@@ -36,15 +36,11 @@ const BookPage = () => {
     fetchBook();
   }, [bookId]);
 
-  const handleClick = () => {
-    setExpanded(!expanded);
-  };
-
   const handleAddToCart = async () => {
     try {
       const res = await axios.post(userCartBaseUrl + "AddToCart", userCartObj);
       console.log(res.status, res.statusText);
-      if (res.status == 200) {
+      if (res.status === 200) {
         Swal.fire({
           icon: "success",
           title: "Book added successfully to cart",
@@ -56,6 +52,10 @@ const BookPage = () => {
     setAddedToCart(true);
   };
 
+  const handleReadPDF = () => {
+    setShowPDF(true); // Show the PDF
+  };
+
   if (!book) {
     return (
       <Layout>
@@ -64,13 +64,24 @@ const BookPage = () => {
     );
   }
 
+  // If showPDF is true, render only the PDF viewer
+  if (showPDF) {
+    return (
+      <Layout>
+        <div style={{ height: "800px" }}>
+          <object data="https://pgcag.files.wordpress.com/2010/01/48lawsofpower.pdf" type="application/pdf" width="95%" height="100%">
+            <p>PDF could not be displayed. Please <a href={book.url}>download it here</a>.</p>
+          </object>
+        </div>
+      </Layout>
+    );
+  }
+
+  // Render book details and buttons
   return (
     <Layout>
       <div className="book-container" key={book.mediaId}>
-        <div
-          className={`book ${expanded ? "expanded" : ""}`}
-          onClick={handleClick}
-        >
+        <div className="book">
           <img src={book.cover} alt={book.title} className="book-cover" />
           <div className="book-info">
             <h2 className="book-title">{book.title}</h2>
@@ -85,6 +96,9 @@ const BookPage = () => {
           disabled={addedToCart}
         >
           {addedToCart ? "Added to Cart" : "Add to Cart"}
+        </button>
+        <button className="add-to-cart-btn" onClick={handleReadPDF}>
+          Read PDF
         </button>
       </div>
     </Layout>

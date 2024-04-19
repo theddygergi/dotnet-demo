@@ -33,7 +33,8 @@ namespace backend.Controllers
                 Cover = dto.Cover,
                 Description = dto.Description,
                 NbPages = dto.NbPages,
-                DateAdded = DateTime.Now
+                DateAdded = DateTime.Now,
+                url = dto.url
             };
 
             await _context.Books.AddAsync(book);
@@ -55,7 +56,8 @@ namespace backend.Controllers
                 Description = dto.Description,
                 Cover = dto.Cover,
                 DurationMinutes = dto.DurationMinutes,
-                DateAdded = DateTime.Now
+                DateAdded = DateTime.Now,
+                url = dto.url,
             };
 
             await _context.Movies.AddAsync(movie);
@@ -182,6 +184,10 @@ namespace backend.Controllers
             if (dto.Cover != null)
             {
                 movie.Cover = dto.Cover;
+            }
+            if (dto.url != null)
+            {
+                movie.url = dto.url;
             }
             else
             {

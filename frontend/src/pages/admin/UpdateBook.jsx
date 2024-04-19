@@ -27,10 +27,20 @@ const UpdateBook = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(mediaBaseUrl + "UpdateBook/" + bookId, book);
       Swal.fire({
-        icon: "success",
-        title: "Book updated successfully",
+        title: "Do you want to save the changes?",
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: "Save",
+        denyButtonText: "Don't save",
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          axios.patch(mediaBaseUrl + "UpdateBook/" + bookId, book);
+          Swal.fire("Saved!", "", "success");
+        } else if (result.isDenied) {
+          Swal.fire("Changes are not saved", "", "info");
+        }
       });
       navigate("/books");
     } catch (err) {
@@ -78,6 +88,12 @@ const UpdateBook = () => {
             placeholder="Year"
             onChange={handleChange}
             name="year"
+          />
+          <input
+            type="text"
+            placeholder="PDF URL"
+            onChange={handleChange}
+            name="url"
           />
           <button className="formButton" onClick={handleClick}>
             Update

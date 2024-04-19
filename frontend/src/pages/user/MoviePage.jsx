@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { mediaBaseUrl } from "../../constants/url.constant";
@@ -9,13 +9,14 @@ import Swal from "sweetalert2";
 import UserContext from "./UserContext";
 
 const MoviePage = () => {
-  const {userId}= useContext(UserContext);
+  const { userId } = useContext(UserContext);
   const location = useLocation();
   const nav = useNavigate();
   const movieId = location.pathname.split("/")[2];
   const [movie, setMovie] = useState(null);
   const [expanded, setExpanded] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
+  const [showTrailer, setShowTrailer] = useState(false); // State to track whether to show the trailer
 
   const userCartObj = {
     mediaId: movieId,
@@ -30,7 +31,7 @@ const MoviePage = () => {
         );
         setMovie(response.data);
       } catch (error) {
-        console.error("Error fetching book:", error);
+        console.error("Error fetching movie:", error);
       }
     };
 
@@ -45,7 +46,7 @@ const MoviePage = () => {
     try {
       const res = await axios.post(userCartBaseUrl + "AddToCart", userCartObj);
       console.log(res.status, res.statusText);
-      if (res.status == 200) {
+      if (res.status === 200) {
         Swal.fire({
           icon: "success",
           title: "Movie added successfully to cart",
@@ -57,6 +58,10 @@ const MoviePage = () => {
     setAddedToCart(true);
   };
 
+  const handleWatchTrailer = () => {
+    setShowTrailer(true); // Show the trailer
+  };
+
   if (!movie) {
     return (
       <Layout>
@@ -65,6 +70,25 @@ const MoviePage = () => {
     );
   }
 
+  // If showTrailer is true, render only the trailer
+  if (showTrailer) {
+    return (
+      <Layout>
+        <div className="trailer-container">
+          <iframe
+            className="trailer-iframe"
+            src="https://www.youtube.com/embed/SzINZZ6iqxY?autoplay=0"
+            title={`${movie.title} trailer`}
+            sandbox="allow-same-origin allow-forms allow-popups allow-scripts allow-presentation"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </Layout>
+    );
+  }
+
+  // Render movie details and buttons
   return (
     <Layout>
       <div className="movie-container" key={movie.mediaId}>
@@ -72,7 +96,7 @@ const MoviePage = () => {
           className={`movie ${expanded ? "expanded" : ""}`}
           onClick={handleClick}
         >
-          <img src={movie.cover} alt={movie.title} className="movie-cover" />
+          <img className="movie-cover" src={movie.cover} alt={movie.title} />
           <div className="movie-info">
             <h2 className="movie-title">{movie.title}</h2>
             <p className="movie-description">{movie.description}</p>
@@ -88,6 +112,9 @@ const MoviePage = () => {
           disabled={addedToCart}
         >
           {addedToCart ? "Added to Cart" : "Add to Cart"}
+        </button>
+        <button className="add-to-cart-btn" onClick={handleWatchTrailer}>
+          Watch Trailer
         </button>
       </div>
     </Layout>
