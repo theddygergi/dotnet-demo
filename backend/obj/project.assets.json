@@ -4935,23 +4935,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\eddyg\\.nuget\\packages\\": {},
+    "C:\\Users\\Emilio\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\backend.csproj",
+      "projectUniqueName": "D:\\CS 3eme annee\\Semestre 6\\Projet I3332(C#)\\dotnet-demo\\backend\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\backend.csproj",
-      "packagesPath": "C:\\Users\\eddyg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\obj\\",
+      "projectPath": "D:\\CS 3eme annee\\Semestre 6\\Projet I3332(C#)\\dotnet-demo\\backend\\backend.csproj",
+      "packagesPath": "C:\\Users\\Emilio\\.nuget\\packages\\",
+      "outputPath": "D:\\CS 3eme annee\\Semestre 6\\Projet I3332(C#)\\dotnet-demo\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\eddyg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Emilio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
