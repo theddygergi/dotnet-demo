@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Search} from '@mui/icons-material'
 import {Button} from '@mui/material'
 import './SearchBar.css'
+import { mediaBaseUrl } from '../constants/url.constant';
 
 const SearchBar = () => {
   const [query, setQuery] = useState('');
@@ -15,13 +16,12 @@ const SearchBar = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.get(`/api/search?query=${query}`);
+      const response = await axios.get(mediaBaseUrl +`Search/?query=${query}`);
       setResults(response.data);
     } catch (error) {
       console.error('Error searching:', error);
     }
   };
-
   return (
     <div>
       <form onSubmit={handleSubmit}>

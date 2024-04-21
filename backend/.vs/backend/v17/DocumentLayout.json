@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\CS 3eme annee\\Semestre 6\\Projet I3332(C#)\\dotnet-demo\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|d:\\cs 3eme annee\\semestre 6\\projet i3332(c#)\\dotnet-demo\\backend\\controllers\\mediacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:controllers\\mediacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|d:\\cs 3eme annee\\semestre 6\\projet i3332(c#)\\dotnet-demo\\backend\\entities\\media.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:entities\\media.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|d:\\cs 3eme annee\\semestre 6\\projet i3332(c#)\\dotnet-demo\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|d:\\cs 3eme annee\\semestre 6\\projet i3332(c#)\\dotnet-demo\\backend\\controllers\\mediacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:controllers\\mediacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|d:\\cs 3eme annee\\semestre 6\\projet i3332(c#)\\dotnet-demo\\backend\\dtos\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -73,7 +73,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -105,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Media.cs",
               "DocumentMoniker": "D:\\CS 3eme annee\\Semestre 6\\Projet I3332(C#)\\dotnet-demo\\backend\\Entities\\Media.cs",
               "RelativeDocumentMoniker": "Entities\\Media.cs",
@@ -142,20 +142,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MediaController.cs",
               "DocumentMoniker": "D:\\CS 3eme annee\\Semestre 6\\Projet I3332(C#)\\dotnet-demo\\backend\\Controllers\\MediaController.cs",
               "RelativeDocumentMoniker": "Controllers\\MediaController.cs",
               "ToolTip": "D:\\CS 3eme annee\\Semestre 6\\Projet I3332(C#)\\dotnet-demo\\backend\\Controllers\\MediaController.cs",
               "RelativeToolTip": "Controllers\\MediaController.cs",
-              "ViewState": "AQIAAOwAAAAAtjMzMzMYwL0AAAAkAAAA",
+              "ViewState": "AQIAABsBAAAAAAAAAAAqwCkBAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-13T15:48:44.455Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\CS 3eme annee\\Semestre 6\\Projet I3332(C#)\\dotnet-demo\\backend\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -163,8 +163,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-08T15:44:50.366Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T15:44:50.366Z"
             },
             {
               "$type": "Document",
