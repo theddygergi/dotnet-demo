@@ -4,6 +4,7 @@ import {Search} from '@mui/icons-material'
 import {Button} from '@mui/material'
 import './SearchBar.css'
 import { mediaBaseUrl } from '../constants/url.constant';
+import SearchRes from './SearchRes';
 
 const SearchBar = () => {
   const [query, setQuery] = useState('');
@@ -24,20 +25,16 @@ const SearchBar = () => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input
           type="text"
           value={query}
           onChange={handleInputChange}
           placeholder="Search for a book or movie..."
         />
-        <Button className='Button'><Search /></Button>
+        <Button className='Button' onClick={handleSubmit}><Search /></Button>
       </form>
-      <ul>
-        {results.map((result) => (
-          <li key={result.id}>{result.title}</li>
-        ))}
-      </ul>
+      <SearchRes results={results} />
     </div>
   );
 };
