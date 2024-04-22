@@ -16,7 +16,7 @@ import {
 } from "@mui/icons-material";
 import ThemeSwitcher from "./ThemeSwitcher";
 import Dashboard from "./Dashboard";
-import UserContext from "../pages/user/UserContext";
+import UserContext from "../pages/user/auth/UserContext";
 import { useContext } from "react";
 import SearchBar from "./SearchBar";
 
@@ -26,53 +26,63 @@ function MainNavigation() {
     <header className={classes.header}>
       <div className={classes.logo}>
         <Link to="/">
-          <Home />Home
+          <Home />
+          Home
         </Link>
       </div>
       <nav className="main-nav">
         <ul>
           <li>
             <Link to="/movies">
-              <LocalMovies />Movies
+              <LocalMovies />
+              Movies
             </Link>
           </li>
           <li>
             <Link to="/books">
-              <LibraryBooks />Books
+              <LibraryBooks />
+              Books
             </Link>
           </li>
           <li>
             <Link to="/addmovies">
-              <AddCircle />Add Movies
+              <AddCircle />
+              Add Movies
             </Link>
           </li>
           <li>
             <Link to="/addbooks">
-              <AddCircleOutline />Add Books
+              <AddCircleOutline />
+              Add Books
             </Link>
           </li>
           <li>
             <Link to="/ranking">
-              <StarRate />Ranking
+              <StarRate />
+              Ranking
             </Link>
           </li>
           <li>
             <Link to={`/usercart/${userId}`}>
-              <AddShoppingCart />Cart
+              <AddShoppingCart />
+              Cart
             </Link>
           </li>
           <li>
             <Link to="/loginAdmin">
-              <LockOpen />Login As Admin
+              <LockOpen />
+              Login As Admin
             </Link>
           </li>
           <li>
             <Link to="/search">
-              <ManageSearch />Search
+              <ManageSearch />
+              Search
             </Link>
           </li>
           <li>
-            <ThemeSwitcher /><Link>Theme</Link>
+            <ThemeSwitcher />
+            <Link>Theme</Link>
           </li>
           <li>
             <Dashboard />
