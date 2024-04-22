@@ -16,7 +16,7 @@ const BookPage = () => {
   const [book, setBook] = useState(null);
   const [addedToCart, setAddedToCart] = useState(false);
   const [showPDF, setShowPDF] = useState(false); // State to track whether to show the PDF
-  const [ranking, setRanking] = useState('');
+  const [ranking, setRanking] = useState(0);
 
   const userCartObj = {
     mediaId: bookId,
@@ -38,7 +38,7 @@ const BookPage = () => {
     const getRanking = async() => {
       try {
         const response = await axios.get(`${userCartBaseUrl}GetAverageRanking/${bookId}`)
-        setRanking(response);
+        setRanking(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -97,7 +97,7 @@ const BookPage = () => {
           <img src={book.cover} alt={book.title} className="book-cover" />
           <div className="book-info">
             <h2 className="book-title">{book.title}</h2>
-            <BookRankingPage maxStars={5} stars={ranking}/>
+            <BookRankingPage maxStars={5} stars={ranking} isSelectable={false}/>
             <p>{book.description}</p>
             <p>Year of Release: {book.year}</p>
             <p>Number of Pages: {book.nbPages}</p>

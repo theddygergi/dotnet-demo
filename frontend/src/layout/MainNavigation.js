@@ -26,53 +26,53 @@ function MainNavigation() {
     <header className={classes.header}>
       <div className={classes.logo}>
         <Link to="/">
-          <Home />
+          <Home />Home
         </Link>
       </div>
-      <nav>
+      <nav className="main-nav">
         <ul>
           <li>
             <Link to="/movies">
-              <LocalMovies />
+              <LocalMovies />Movies
             </Link>
           </li>
           <li>
             <Link to="/books">
-              <LibraryBooks />
+              <LibraryBooks />Books
             </Link>
           </li>
           <li>
             <Link to="/addmovies">
-              <AddCircle />
+              <AddCircle />Add Movies
             </Link>
           </li>
           <li>
             <Link to="/addbooks">
-              <AddCircleOutline />
+              <AddCircleOutline />Add Books
             </Link>
           </li>
           <li>
             <Link to="/ranking">
-              <StarRate />
+              <StarRate />Ranking
             </Link>
           </li>
           <li>
             <Link to={`/usercart/${userId}`}>
-              <AddShoppingCart />
+              <AddShoppingCart />Cart
             </Link>
           </li>
           <li>
             <Link to="/loginAdmin">
-              <LockOpen />
+              <LockOpen />Login As Admin
             </Link>
           </li>
           <li>
             <Link to="/search">
-              <ManageSearch />
+              <ManageSearch />Search
             </Link>
           </li>
           <li>
-            <ThemeSwitcher />
+            <ThemeSwitcher /><Link>Theme</Link>
           </li>
           <li>
             <Dashboard />

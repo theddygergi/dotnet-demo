@@ -7,6 +7,7 @@ import Layout from "../../layout/layout";
 import { userCartBaseUrl } from "../../constants/url.constant";
 import Swal from "sweetalert2";
 import UserContext from "./UserContext";
+import BookRankingPage from "../../layout/BookRankingPage";
 
 const MoviePage = () => {
   const { userId } = useContext(UserContext);
@@ -17,6 +18,7 @@ const MoviePage = () => {
   const [expanded, setExpanded] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
   const [showTrailer, setShowTrailer] = useState(false); // State to track whether to show the trailer
+  const [ranking, setRanking] = useState(0);
 
   const userCartObj = {
     mediaId: movieId,
@@ -34,8 +36,16 @@ const MoviePage = () => {
         console.error("Error fetching movie:", error);
       }
     };
-
+    const getRanking = async() => {
+      try {
+        const response = await axios.get(`${userCartBaseUrl}GetAverageRanking/${movieId}`)
+        setRanking(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
     fetchMovie();
+    getRanking();
   }, [movieId]);
 
   const handleClick = () => {
@@ -99,6 +109,7 @@ const MoviePage = () => {
           <img className="movie-cover" src={movie.cover} alt={movie.title} />
           <div className="movie-info">
             <h2 className="movie-title">{movie.title}</h2>
+            <BookRankingPage maxStars={5} stars={ranking} isSelectable={false}/>
             <p className="movie-description">{movie.description}</p>
             <p className="movie-duration">
               Duration: {movie.durationMinutes} minutes

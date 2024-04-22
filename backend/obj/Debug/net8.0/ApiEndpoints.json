@@ -449,6 +449,32 @@
   },
   {
     "ContainingType": "backend.Controllers.UserCartController",
+    "Method": "GetAverageRanking",
+    "RelativePath": "api/UserCart/GetAverageRanking/{mediaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mediaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Double",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "backend.Controllers.UserCartController",
     "Method": "GetUserCartByUserId",
     "RelativePath": "api/UserCart/GetCartItems/{id}",
     "HttpMethod": "GET",

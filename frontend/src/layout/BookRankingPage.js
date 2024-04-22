@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import './BookRanking.css'; // Import CSS file for styling
 
-const BookRankingPage = ({ maxStars, stars }) => {
+const BookRankingPage = ({ maxStars, stars, isSelectable }) => {
   const [rating, setRating] = useState(stars || 0);
 
   const handleClick = (value) => {
-    setRating(value);
+    if (isSelectable) {
+      setRating(value);
+    }
   };
 
   return (
