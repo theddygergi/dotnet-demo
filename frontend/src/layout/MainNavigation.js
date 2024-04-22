@@ -5,6 +5,8 @@ import ThemeSwitcher from "./ThemeSwitcher";
 import Dashboard from "./Dashboard";
 import UserContext from "../pages/user/UserContext";
 import { useContext } from "react";
+import SearchBar from "./SearchBar";
+
 function MainNavigation() {
   const {userId}= useContext(UserContext);
   return (
@@ -36,7 +38,7 @@ function MainNavigation() {
             <Link to="/loginAdmin"><LockOpen/></Link>
           </li>
           <li>
-            <Link to =""><Search /></Link>
+            <Link to=""><SearchBar /></Link>
           </li>
           <li>
             <ThemeSwitcher />

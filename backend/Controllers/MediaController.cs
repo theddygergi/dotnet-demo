@@ -282,5 +282,19 @@ namespace backend.Controllers
                 return Ok(cartItems);
             }
         }
+        // GET: api/Media/Search
+        [HttpGet("Search")]
+        public async Task<ActionResult<IEnumerable<Media>>> SearchMedia(
+            [FromQuery] string query)
+        {
+            var media = await _context.Media
+                .Where(m => m.Title.Contains(query) ||
+                            m.Creator.Contains(query) ||
+                            m.Description.Contains(query) ||
+                            m.MediaType.Contains(query))
+                .ToListAsync();
+
+            return media;
+        }
     }
 }

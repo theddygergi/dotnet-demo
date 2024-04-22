@@ -1,0 +1,5 @@
+.Button:hover,
+.Button:active,
+.Button.active {
+  color: white;
+}
