@@ -174,6 +174,36 @@ namespace backend.Controllers
             return Ok(rank);
         }
 
+        [HttpGet("GetAverageRanking/{mediaId}")]
+        public async Task<ActionResult<double>> GetAverageRanking([FromRoute] int mediaId)
+        {
+            try
+            {
+                // Fetch all user ratings for the given mediaId
+                var ratings = await _context.UserCarts
+                    .Where(cart => cart.MediaId == mediaId && cart.Ranking != null)
+                    .Select(cart => cart.Ranking)
+                    .ToListAsync();
+
+                // Calculate the average rating
+                if (ratings.Any())
+                {
+                    double averageRanking = ratings.Average();
+                    return Ok(averageRanking);
+                }
+                else
+                {
+                    // No ratings found for the given mediaId
+                    return NotFound("No ratings found for the given mediaId.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions
+                return StatusCode(500, $"An error occurred while retrieving the average ranking: {ex.Message}");
+            }
+        }
+
 
 
     }

@@ -20,6 +20,8 @@ import LoginAdmin from "./pages/admin/LoginAdmin";
 import ForgotPasswordPage from "./pages/user/ForgotPassword";
 import RegisterAdmin from "./pages/admin/RegisterAdmin";
 import { UserProvider } from "./pages/user/UserContext";
+import SearchPage from "./pages/user/SearchPage";
+import AdminPage from "./pages/admin/AdminPage";
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
           <Route path="/viewmovie/:id" element={<MoviePage />} />
           <Route path="/usercart/:id" element={<UserCart />} />
           <Route path="/forgotPassword" element={<ForgotPasswordPage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/adminPage" element={<AdminPage/>} />
         </Routes>
       </div>
     </UserProvider>

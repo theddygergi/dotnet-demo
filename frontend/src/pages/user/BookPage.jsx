@@ -6,6 +6,7 @@ import "./BookPage.css";
 import Layout from "../../layout/layout";
 import Swal from "sweetalert2";
 import UserContext from "./UserContext";
+import BookRankingPage from "../../layout/BookRankingPage";
 
 const BookPage = () => {
   const nav = useNavigate();
@@ -15,6 +16,7 @@ const BookPage = () => {
   const [book, setBook] = useState(null);
   const [addedToCart, setAddedToCart] = useState(false);
   const [showPDF, setShowPDF] = useState(false); // State to track whether to show the PDF
+  const [ranking, setRanking] = useState('');
 
   const userCartObj = {
     mediaId: bookId,
@@ -33,7 +35,17 @@ const BookPage = () => {
       }
     };
 
+    const getRanking = async() => {
+      try {
+        const response = await axios.get(`${userCartBaseUrl}GetAverageRanking/${bookId}`)
+        setRanking(response);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
     fetchBook();
+    getRanking();
   }, [bookId]);
 
   const handleAddToCart = async () => {
@@ -69,7 +81,7 @@ const BookPage = () => {
     return (
       <Layout>
         <div style={{ height: "800px" }}>
-          <object data="https://pgcag.files.wordpress.com/2010/01/48lawsofpower.pdf" type="application/pdf" width="95%" height="100%">
+          <object data={book.url} type="application/pdf" width="95%" height="100%">
             <p>PDF could not be displayed. Please <a href={book.url}>download it here</a>.</p>
           </object>
         </div>
@@ -85,6 +97,7 @@ const BookPage = () => {
           <img src={book.cover} alt={book.title} className="book-cover" />
           <div className="book-info">
             <h2 className="book-title">{book.title}</h2>
+            <BookRankingPage maxStars={5} stars={ranking}/>
             <p>{book.description}</p>
             <p>Year of Release: {book.year}</p>
             <p>Number of Pages: {book.nbPages}</p>

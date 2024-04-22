@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\dotnet-demo\\backend\\context\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:context\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\dotnet-demo\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\dotnet-demo\\backend\\controllers\\usercartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:controllers\\usercartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\dotnet-demo\\backend\\controllers\\mediacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:controllers\\mediacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\dotnet-demo\\backend\\context\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:context\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\dotnet-demo\\backend\\entities\\media.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\dotnet-demo\\backend\\dtos\\usercartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:dtos\\usercartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\dotnet-demo\\backend\\controllers\\usercartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|solutionrelative:controllers\\usercartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA6957D7-691F-406A-8037-3807D8603B81}|backend.csproj|c:\\users\\eddyg\\desktop\\semester6\\dotnet-demo\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,19 +79,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Context\\DataContext.cs",
-              "RelativeDocumentMoniker": "Context\\DataContext.cs",
-              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Context\\DataContext.cs",
-              "RelativeToolTip": "Context\\DataContext.cs",
-              "ViewState": "AQIAAAkAAAAAnJmZmZnhvw4AAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T15:35:31.102Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-22T16:55:00.181Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Media.cs",
               "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Entities\\Media.cs",
               "RelativeDocumentMoniker": "Entities\\Media.cs",
@@ -99,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -111,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
@@ -123,20 +127,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MediaController.cs",
               "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Controllers\\MediaController.cs",
               "RelativeDocumentMoniker": "Controllers\\MediaController.cs",
               "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Controllers\\MediaController.cs",
               "RelativeToolTip": "Controllers\\MediaController.cs",
-              "ViewState": "AQIAABsBAAAAAAAAAAAAACgBAAAZAAAA",
+              "ViewState": "AQIAAP0AAAAAAAAAAAAqwCUBAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T15:48:44.455Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T15:48:44.455Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ExcludeFilter.cs",
               "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Context\\ExcludeFilter.cs",
               "RelativeDocumentMoniker": "Context\\ExcludeFilter.cs",
@@ -148,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -160,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "BookDto.cs",
               "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Dtos\\BookDto.cs",
               "RelativeDocumentMoniker": "Dtos\\BookDto.cs",
@@ -172,7 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "ForgotPasswordController.cs",
               "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Controllers\\ForgotPasswordController.cs",
               "RelativeDocumentMoniker": "Controllers\\ForgotPasswordController.cs",
@@ -184,7 +187,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 1,
+              "Title": "UserCartController.cs",
+              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Controllers\\UserCartController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserCartController.cs",
+              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Controllers\\UserCartController.cs",
+              "RelativeToolTip": "Controllers\\UserCartController.cs",
+              "ViewState": "AQIAAKkAAACAbmZmZmb+v70AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T15:54:55.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Context\\DataContext.cs",
+              "RelativeDocumentMoniker": "Context\\DataContext.cs",
+              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Context\\DataContext.cs",
+              "RelativeToolTip": "Context\\DataContext.cs",
+              "ViewState": "AQIAAAkAAAAAnJmZmZnhvxEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T15:35:31.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "20240415170148_initial.cs",
               "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Migrations\\20240415170148_initial.cs",
               "RelativeDocumentMoniker": "Migrations\\20240415170148_initial.cs",
@@ -196,19 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserCartController.cs",
-              "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Controllers\\UserCartController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserCartController.cs",
-              "ToolTip": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Controllers\\UserCartController.cs",
-              "RelativeToolTip": "Controllers\\UserCartController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T15:54:55.448Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "UserCartDto.cs",
               "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Dtos\\UserCartDto.cs",
               "RelativeDocumentMoniker": "Dtos\\UserCartDto.cs",
@@ -220,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "MovieDto.cs",
               "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Dtos\\MovieDto.cs",
               "RelativeDocumentMoniker": "Dtos\\MovieDto.cs",
@@ -232,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\eddyg\\Desktop\\Semester6\\dotnet-demo\\backend\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",

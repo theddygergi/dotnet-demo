@@ -290,7 +290,6 @@ namespace backend.Controllers
             var media = await _context.Media
                 .Where(m => m.Title.Contains(query) ||
                             m.Creator.Contains(query) ||
-                            m.Description.Contains(query) ||
                             m.MediaType.Contains(query))
                 .ToListAsync();
 
