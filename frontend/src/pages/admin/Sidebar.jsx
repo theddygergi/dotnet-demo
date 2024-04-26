@@ -42,9 +42,9 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </a>
         </li>
         <li className="sidebar-list-item">
-          <a href="">
+          <Link to="/manageusers">
             <BsPeopleFill className="icon" /> Manage Users
-          </a>
+          </Link>
         </li>
         <li className="sidebar-list-item">
           <Link to="/inventory">
@@ -52,9 +52,9 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </Link>
         </li>
         <li className="sidebar-list-item">
-          <a href="">
+          <Link to="/reports">
             <BsMenuButtonWideFill className="icon" /> Reports
-          </a>
+          </Link>
         </li>
         <li className="sidebar-list-item">
           <a href="">

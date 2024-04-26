@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Layout from "../../../layout/layout";
 import axios from "axios";
 import { mediaBaseUrl } from "../../../constants/url.constant";
 import Swal from "sweetalert2";

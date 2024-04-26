@@ -28,7 +28,7 @@ const AddMovies = () => {
         icon: "success",
         title: "Movie added successfully",
       });
-      navigate("/movies");
+      navigate("/inventory");
     } catch (err) {
       console.log(err);
     }

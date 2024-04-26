@@ -30,7 +30,7 @@ const AddBooks = () => {
         icon: "success",
         title: "Book added successfully",
       });
-      navigate("/books");
+      navigate("/inventory");
     } catch (err) {
       console.log(err);
     }

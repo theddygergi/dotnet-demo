@@ -45,7 +45,7 @@ const UpdateMovie = () => {
           Swal.fire("Changes are not saved", "", "info");
         }
       });
-      navigate("/movies");
+      navigate("/inventory");
     } catch (err) {
       console.log(err);
     }

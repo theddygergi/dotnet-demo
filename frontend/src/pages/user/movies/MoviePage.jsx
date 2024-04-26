@@ -89,7 +89,7 @@ const MoviePage = () => {
         <div className="trailer-container">
           <iframe
             className="trailer-iframe"
-            src="https://www.youtube.com/embed/SzINZZ6iqxY?autoplay=0"
+            src={movie.url}
             title={`${movie.title} trailer`}
             sandbox="allow-same-origin allow-forms allow-popups allow-scripts allow-presentation"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

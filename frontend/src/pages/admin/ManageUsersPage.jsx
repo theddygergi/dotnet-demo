@@ -7,7 +7,7 @@ import { useState } from "react";
 import ManageUsers from './ManageUsers';
 
 
-function AddMoviesPage() {
+function ManageUsersPage() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
 
   const OpenSidebar = () => {
@@ -25,4 +25,4 @@ function AddMoviesPage() {
   );
 }
 
-export default AddMoviesPage;
+export default ManageUsersPage;

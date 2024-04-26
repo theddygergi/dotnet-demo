@@ -42,7 +42,7 @@ const UpdateBook = () => {
           Swal.fire("Changes are not saved", "", "info");
         }
       });
-      navigate("/books");
+      navigate("/inventory");
     } catch (err) {
       console.log(err);
     }

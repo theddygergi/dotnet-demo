@@ -295,5 +295,19 @@ namespace backend.Controllers
 
             return media;
         }
+
+        [HttpGet("GetNbBooks")]
+        public async Task<ActionResult> GetNbBooks()
+        {
+            var count = await _context.Books.CountAsync();
+            return Ok(count);
+        }
+
+        [HttpGet("GetNbMovies")]
+        public async Task<ActionResult> GetNbMovies()
+        {
+            var count = await _context.Movies.CountAsync();
+            return Ok(count);
+        }
     }
 }

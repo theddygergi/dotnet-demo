@@ -45,6 +45,12 @@ namespace backend.Controllers
             return Ok("Admin found");
         }
 
+        [HttpGet("AdminCount")]
+        public async Task<ActionResult> AdminCount()
+        {
+            var count = await _context.Admins.CountAsync();
+            return Ok(count);
+        }
     }
 
 

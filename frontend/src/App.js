@@ -21,7 +21,8 @@ import SearchPage from "./pages/user/home/SearchPage";
 import AdminPage from "./pages/admin/AdminPage";
 import AddMoviesPage from "./pages/admin/movies/AddMoviePage";
 import InventoryPage from "./pages/admin/InventoryPage";
-
+import ManageUsersPage from "./pages/admin/ManageUsersPage";
+import ReportsPage from "./pages/admin/ReportsPage";
 function App() {
   return (
     <UserProvider>
@@ -35,8 +36,8 @@ function App() {
           <Route path="/movies" element={<Movies />} />
           <Route path="/books" element={<Books />} />
           <Route path="/addbooks" element={<AddBookPage />} />
-          <Route path="/books/updatebook/:id" element={<UpdateBook />} />
-          <Route path="/movies/updatemovie/:id" element={<UpdateMovie />} />
+          <Route path="/inventory/updatebook/:id" element={<UpdateBook />} />
+          <Route path="/inventory/updatemovie/:id" element={<UpdateMovie />} />
           <Route path="/addmovies" element={<AddMoviesPage />} />
           <Route path="/ranking" element={<Ranking />} />
           <Route path="/viewbook/:id" element={<BookPage />} />
@@ -45,6 +46,8 @@ function App() {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/adminpage" element={<AdminPage />} />
           <Route path="/inventory" element={<InventoryPage />} />
+          <Route path="/manageusers" element={<ManageUsersPage />} />
+          <Route path="/reports" element={<ReportsPage />} />
         </Routes>
       </div>
     </UserProvider>
