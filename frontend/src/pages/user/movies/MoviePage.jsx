@@ -10,7 +10,7 @@ import UserContext from "../auth/UserContext";
 import BookRankingPage from "../../../layout/BookRankingPage";
 
 const MoviePage = () => {
-  const { userId } = useContext(UserContext);
+  const userId = sessionStorage.getItem('userId'); 
   const location = useLocation();
   const nav = useNavigate();
   const movieId = location.pathname.split("/")[2];

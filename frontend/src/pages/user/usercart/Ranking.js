@@ -8,7 +8,7 @@ import UserContext from "../auth/UserContext";
 const Ranking = () => {
   const [movies, setMovies] = useState([]);
   const [books, setBooks] = useState([]);
-  const { userId } = useContext(UserContext);
+  const userId = sessionStorage.getItem('userId');
 
   const getBooks = async () => {
     try {

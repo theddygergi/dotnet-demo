@@ -14,26 +14,27 @@ const UserCartBook = () => {
   const [mediaMap, setMediaMap] = useState({});
   const location = useLocation();
   const redirect = useNavigate();
-  const { userId } = useContext(UserContext);
+  const userId = sessionStorage.getItem('userId');
 
   const fetchCart = async () => {
     try {
       const response = await axios.get(
-        `${userCartBaseUrl}GetCartItems/${userId}?mediaType=book`
+        `https://localhost:7030/api/UserCart/GetCartItems/${userId}?mediaType=book`
       );
       setCart(response.data);
-
+  
       // Fetch media for each cart item
       const mediaFetchPromises = response.data.map((cartItem) =>
         fetchMedia(cartItem.mediaId)
       );
-
+  
       // Wait for all media fetch promises to resolve
       await Promise.all(mediaFetchPromises);
     } catch (error) {
       alert("An error occurred while fetching the cart items.");
     }
   };
+  
 
   const fetchMedia = async (mediaId) => {
     try {

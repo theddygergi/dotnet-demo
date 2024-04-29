@@ -1,4 +1,27 @@
-.books{
-    width:100vw;
-    overflow: auto;
-}
+.books-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .books-table th,
+  .books-table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .books-table img {
+    max-width: 150px; /* Increase the max-width to make the images bigger */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .books-table .delete,
+  .books-table .update {
+    margin-right: 5px;
+    padding: 5px 10px; /* Keep the padding of the buttons */
+    font-size: 14px; /* Keep the font size of the buttons */
+  }
+  
+  .books-table td:first-child {
+    width: 1%;
+  }
+  

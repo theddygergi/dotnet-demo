@@ -1,45 +1,80 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { usersBaseUrl } from "../../../constants/url.constant";
 import UserContext from "./UserContext";
 
 function LoginUser() {
-  const [wrong, setWrong] = useState(false);
   const [error, setError] = useState(false);
-  const { userId, setUserId } = useContext(UserContext);
+  const [accessToken, setAccessToken] = useState('');
+  const [refreshToken, setRefreshToken] = useState('');
+  const [expiresIn, setExpiresIn] = useState(0);
   const [data, setData] = useState({
     email: "",
     password: "",
   });
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setData({
-      ...data,
-      [e.target.name]: value,
-    });
-  };
+
+  const { setUserId } = useContext(UserContext);
   const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   const HandleLogin = async (e) => {
     e.preventDefault();
-    console.log(data);
     try {
       const res = await axios.post("https://localhost:7030/login", data);
-      const res1 = await axios.post(
-        "https://localhost:7030/api/User/login",
-        data
-      );
+      const res1 = await axios.post("https://localhost:7030/api/User/login", data);
       setUserId(res1.data.id);
-      const responseData = res.data; // Use a different variable name here
-      console.log(res);
+      sessionStorage.setItem('userId', res1.data.id); // Store user ID in sessionStorage
+      const { accessToken,  expiresIn, refreshToken } = res.data;
+      setAccessToken(accessToken);
+      setRefreshToken(refreshToken);
+      setExpiresIn(expiresIn);
       if (res.status === 200) {
         console.log("Login successful");
         navigate("/");
-      } //else console.log("Login failed", responseData.error);
+      }
     } catch (error) {
       console.log("Login error", error);
+      setError(true);
     }
   };
+
+  const refreshAccessToken = async () => {
+    try {
+      const res = await axios.post("https://localhost:7030/refresh", {
+        refreshToken,
+      });
+      const { accessToken, expiresIn } = res.data;
+      setAccessToken(accessToken);
+      setExpiresIn(expiresIn);
+    } catch (error) {
+      console.log("Token refresh error", error);
+    }
+  };
+
+  useEffect(() => {
+    let refreshTimer;
+  
+    if (expiresIn > 0) {
+      refreshTimer = setInterval(() => {
+        if (expiresIn < 60) {
+          // Refresh token when it's close to expiration
+          refreshAccessToken();
+        }
+      }, 1000 * (expiresIn - 60)); // Refresh 1 minute before expiration
+    }
+  
+    return () => clearInterval(refreshTimer); // Clear the interval on unmount
+  }, [expiresIn]);
+  
+  
 
   return (
     <>
@@ -77,7 +112,7 @@ function LoginUser() {
               </div>
             </div>
             <div>
-              <button type="submit" className="Button" onClick={HandleLogin}>
+              <button type="submit" className="Button">
                 Login
               </button>
             </div>
@@ -92,15 +127,9 @@ function LoginUser() {
           >
             Login as Admin
           </button>
-          {wrong && (
-            <div>
-              <span>Wrong Email or Password</span> ,try submitting again.
-            </div>
-          )}
           {error && (
             <div role="alert">
-              <span class="font-medium">Server error</span> ,try submitting
-              again.
+              <span className="font-medium">Login failed:</span> Wrong email or password.
             </div>
           )}
         </div>
@@ -108,4 +137,5 @@ function LoginUser() {
     </>
   );
 }
+
 export default LoginUser;

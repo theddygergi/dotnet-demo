@@ -34,7 +34,7 @@ const AddMovies = () => {
     }
   };
   return (
-    <div>
+    <div className="form-container">
       <div className="form">
         <h1>Add New Movie</h1>
         <input

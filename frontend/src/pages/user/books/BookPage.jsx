@@ -11,7 +11,7 @@ import BookRankingPage from "../../../layout/BookRankingPage";
 const BookPage = () => {
   const nav = useNavigate();
   const location = useLocation();
-  const { userId } = useContext(UserContext);
+  const userId = sessionStorage.getItem('userId');
   const bookId = location.pathname.split("/")[2];
   const [book, setBook] = useState(null);
   const [addedToCart, setAddedToCart] = useState(false);

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 import {
   Menu,
@@ -13,15 +13,31 @@ import {
   Home,
   Search,
   ManageSearch,
+  Logout,
 } from "@mui/icons-material";
 import ThemeSwitcher from "./ThemeSwitcher";
 import Dashboard from "./Dashboard";
 import UserContext from "../pages/user/auth/UserContext";
 import { useContext } from "react";
 import SearchBar from "./SearchBar";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 function MainNavigation() {
-  const { userId } = useContext(UserContext);
+  const navigate = useNavigate();
+  const userId = sessionStorage.getItem("userId");
+  const handleLogout = () => {
+    try {
+      sessionStorage.removeItem("userId");
+      Swal.fire({
+        icon: "success",
+        title: "Log out successfully!",
+      });
+      navigate("/loginUser");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
@@ -33,50 +49,38 @@ function MainNavigation() {
       <nav className="main-nav">
         <ul>
           <li>
-            <Link to="/movies">
-              <LocalMovies />
+            <Link to="/moviespage">
+              <LocalMovies /> <br />
               Movies
             </Link>
           </li>
           <li>
-            <Link to="/books">
-              <LibraryBooks />
+            <Link to="/bookspage">
+              <LibraryBooks /> <br />
               Books
             </Link>
           </li>
           <li>
-            <Link to="/addmovies">
-              <AddCircle />
-              Add Movies
-            </Link>
-          </li>
-          <li>
-            <Link to="/addbooks">
-              <AddCircleOutline />
-              Add Books
-            </Link>
-          </li>
-          <li>
             <Link to="/ranking">
-              <StarRate />
+              <StarRate /> <br />
               Ranking
             </Link>
           </li>
           <li>
             <Link to={`/usercart/${userId}`}>
-              <AddShoppingCart />
+              <AddShoppingCart /> <br />
               Cart
             </Link>
           </li>
           <li>
             <Link to="/loginAdmin">
-              <LockOpen />
+              <LockOpen /> <br />
               Login As Admin
             </Link>
           </li>
           <li>
             <Link to="/search">
-              <ManageSearch />
+              <ManageSearch /> <br />
               Search
             </Link>
           </li>
@@ -85,7 +89,8 @@ function MainNavigation() {
             <Link>Theme</Link>
           </li>
           <li>
-            <Dashboard />
+            <Logout/> <br />
+            <span onClick={handleLogout}>Log Out</span>
           </li>
         </ul>
       </nav>

@@ -1,14 +1,15 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { mediaBaseUrl } from "../../../constants/url.constant";
 import Swal from "sweetalert2";
 import "./Movies.css";
+import { Delete, Edit } from "@mui/icons-material";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const navigate = useNavigate();
+
   useEffect(() => {
     const fetchAllMovies = async () => {
       try {
@@ -40,20 +41,19 @@ const Movies = () => {
           cancelButtonText: "No, cancel!",
           reverseButtons: true,
         })
-        .then((result) => {
+        .then(async (result) => {
           if (result.isConfirmed) {
-            axios.delete(mediaBaseUrl + "DeleteMovie/" + id);
+            await axios.delete(mediaBaseUrl + "DeleteMovie/" + id);
             swalWithBootstrapButtons.fire({
               title: "Deleted!",
               text: "Your file has been deleted.",
               icon: "success",
               timer: 1000,
             });
-            window.location.reload();
-          } else if (
-            /* Read more about handling dismissals below */
-            result.dismiss === Swal.DismissReason.cancel
-          ) {
+            // Refresh movies after deletion
+            const res = await axios.get(mediaBaseUrl + "GetAllMovies");
+            setMovies(res.data);
+          } else if (result.dismiss === Swal.DismissReason.cancel) {
             swalWithBootstrapButtons.fire({
               title: "Cancelled",
               text: "Your imaginary file is safe :)",
@@ -61,39 +61,59 @@ const Movies = () => {
             });
           }
         });
-      window.location.reload();
     } catch (err) {
       console.log(err);
     }
   };
+
   return (
     <div>
       <h1>Movies</h1>
-      <div className="movies">
-        {movies.map((movie) => (
-          <div className="movie" key={movie.mediaId}>
-            {movie.cover && (
-              <img
-                src={movie.cover}
-                alt=""
-                onClick={() => navigate(`/viewmovie/${movie.mediaId}`)}
-              />
-            )}
-            <button
-              className="delete"
-              onClick={() => handleDelete(movie.mediaId)}
-            >
-              Delete
-            </button>
-            <button
-              className="update"
-              onClick={() => navigate("updatemovie/" + movie.mediaId)}
-            >
-              Update
-            </button>
-          </div>
-        ))}
-      </div>
+      <table className="movies-table">
+        <thead>
+          <tr>
+            <th>Cover</th>
+            <th>Creator</th>
+            <th>Duration</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {movies.map((movie) => (
+            <tr key={movie.mediaId}>
+              <td>
+                {movie.cover && (
+                  <img
+                    src={movie.cover}
+                    alt=""
+                    onClick={() => navigate(`/viewmovie/${movie.mediaId}`)}
+                  />
+                )}
+              </td>
+              <td>
+                {movie.creator}
+              </td>
+              <td>
+                {movie.durationMinutes}
+              </td>
+              <td>
+                <button
+                  className="delete"
+                  onClick={() => handleDelete(movie.mediaId)}
+                >
+                  <Delete/>
+                </button>
+                <button
+                  className="update"
+                  onClick={() => navigate("updatemovie/" + movie.mediaId)}
+                >
+                  <Edit/>
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <button className="Button" onClick={() => navigate("/addmovies")}>
         Add new Movie
       </button>

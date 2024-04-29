@@ -1,13 +1,10 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Layout from "../../../layout/layout";
 import axios from "axios";
 import { mediaBaseUrl } from "../../../constants/url.constant";
 import Swal from "sweetalert2";
 import "./Books.css";
-
-//import {Edit, Delete} from '@mui/icons-material'
 
 const Books = () => {
   const [books, setBooks] = useState([]);
@@ -55,7 +52,6 @@ const Books = () => {
             });
             window.location.reload();
           } else if (
-            /* Read more about handling dismissals below */
             result.dismiss === Swal.DismissReason.cancel
           ) {
             swalWithBootstrapButtons.fire({
@@ -69,34 +65,49 @@ const Books = () => {
       console.log(err);
     }
   };
+
   return (
     <div>
       <h1>Books</h1>
-      <div className="books">
-        {books.map((book) => (
-          <div className="book" key={book.mediaId}>
-            {book.cover && (
-              <img
-                src={book.cover}
-                alt=""
-                onClick={() => navigate(`/viewbook/${book.mediaId}`)}
-              />
-            )}
-            <button
-              className="delete"
-              onClick={() => handleDelete(book.mediaId)}
-            >
-              Delete
-            </button>
-            <button
-              className="update"
-              onClick={() => navigate(`updatebook/${book.mediaId}`)}
-            >
-              Update
-            </button>
-          </div>
-        ))}
-      </div>
+      <table className="books-table">
+        <thead>
+          <tr>
+            <th>Cover</th>
+            <th>Title</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {books.map((book) => (
+            <tr key={book.mediaId}>
+              <td>
+                {book.cover && (
+                  <img
+                    src={book.cover}
+                    alt=""
+                    onClick={() => navigate(`/viewbook/${book.mediaId}`)}
+                  />
+                )}
+              </td>
+              <td>{book.title}</td>
+              <td>
+                <button
+                  className="delete"
+                  onClick={() => handleDelete(book.mediaId)}
+                >
+                  Delete
+                </button>
+                <button
+                  className="update"
+                  onClick={() => navigate(`updatebook/${book.mediaId}`)}
+                >
+                  Update
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <button className="Button" onClick={() => navigate("/addbooks")}>
         Add new Book
       </button>

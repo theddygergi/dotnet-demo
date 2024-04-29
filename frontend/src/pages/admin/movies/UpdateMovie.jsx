@@ -25,7 +25,7 @@ const UpdateMovie = () => {
 
   const handleChange = (e) => {
     setMovie((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  }; //update the data we input in the form
+  };
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -53,7 +53,7 @@ const UpdateMovie = () => {
 
   console.log(movie);
   return (
-    <Layout>
+    <div className="form-container" style={{marginLeft: '500px'}}>
       <div className="form">
         <h1>Update Movie</h1>
         <input
@@ -102,7 +102,7 @@ const UpdateMovie = () => {
           Update
         </button>
       </div>
-    </Layout>
+    </div>
   );
 };
 

@@ -49,8 +49,7 @@ const UpdateBook = () => {
   };
 
   return (
-    <Layout>
-      <div className="form_container">
+      <div className="form_container" style={{marginLeft: '500px'}}>
         <div className="form">
           <h1>Update Book</h1>
           <input
@@ -100,7 +99,6 @@ const UpdateBook = () => {
           </button>
         </div>
       </div>
-    </Layout>
   );
 };
 

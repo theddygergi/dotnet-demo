@@ -14,7 +14,7 @@ const UserCartMovie = () => {
   const [mediaMap, setMediaMap] = useState({});
   const location = useLocation();
   const redirect = useNavigate();
-  const { userId } = useContext(UserContext);
+  const userId = sessionStorage.getItem('userId');
 
   const fetchCart = async () => {
     try {

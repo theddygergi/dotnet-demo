@@ -1,5 +1,27 @@
-.movies{
-    width:100vw;
-    height: 70vh;
-    overflow-y: auto;
-}
+.movies-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .movies-table th,
+  .movies-table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .movies-table img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .movies-table .delete,
+  .movies-table .update {
+    margin-right: 5px;
+    padding: 5px 10px; /* Adjust the padding to make the buttons smaller */
+    font-size: 14px; /* Adjust the font size to make the buttons smaller */
+  }
+  
+  .movies-table td:first-child {
+    width: 1%;
+  }
+  
