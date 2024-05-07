@@ -10,16 +10,14 @@ import "./Home.css";
 function Home() {
   return (
     <div>
-      <h1>LibraFlick</h1>
-      <h3>Your Ultimate Library Book and Movie Management System</h3>
-      <p>
+      <h1 style={{marginLeft:"550px",fontSize:"bold"}}>LibraFlick</h1><br/>
+      <h3 style={{marginLeft:"550px"}}>Your Ultimate Library Book and Movie Management System</h3><br/>
+      <p  style={{width:"350px",marginLeft:"550px"}}>
         Welcome to LibraFlick, your one-stop solution for organizing and
         managing your library of books and movies with ease and efficiency.
         Whether you're a voracious reader, a film enthusiast, or both,
         LibraFlick offers a seamless platform to catalog, track, and explore
         your favorite titles.
-      </p>
-      <p>
         LibraFlick transforms the way you manage and engage with your library of
         books and movies, offering unparalleled convenience, exploration, and
         enjoyment. Join our community today and embark on a journey of literary

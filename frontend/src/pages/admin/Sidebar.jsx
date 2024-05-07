@@ -57,9 +57,9 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </Link>
         </li>
         <li className="sidebar-list-item">
-          <a href="">
-            <BsFillGearFill className="icon" /> Settings
-          </a>
+          <Link to="/registerAdmin">
+            <BsFillGearFill className="icon" /> Add Admin
+            </Link>
         </li>
       </ul>
     </aside>

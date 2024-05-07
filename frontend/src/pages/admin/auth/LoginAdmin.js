@@ -38,7 +38,7 @@ function LoginAdmin() {
           }),
           500000
         );
-        navigate("/");
+        navigate("/adminpage");
       } //else console.log("Login failed", responseData.error);
     } catch (error) {
       console.log("Login error", error);
@@ -100,12 +100,6 @@ function LoginAdmin() {
             </div>
           </form>
           <p>Forgot password?</p>
-          <button
-            className="formButton"
-            onClick={() => navigate("/registerAdmin")}
-          >
-            Add admin
-          </button>
           {wrong && (
             <div>
               <span>Wrong Email or Password</span> ,try submitting again.
