@@ -73,9 +73,9 @@ function MainNavigation() {
             </Link>
           </li>
           <li>
-            <Link to="/loginAdmin">
+            <Link to="/loginall">
               <LockOpen /> <br />
-              Login As Admin
+              Login
             </Link>
           </li>
           <li>

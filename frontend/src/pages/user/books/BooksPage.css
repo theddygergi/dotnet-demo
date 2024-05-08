@@ -1,0 +1,26 @@
+.books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .book {
+    position: relative;
+  }
+  
+  .book img:hover {
+    opacity: 0.8;
+  }
+  
+  /* Optional: Add styles for book titles, authors, etc. */
+  .book-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  

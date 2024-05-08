@@ -25,6 +25,7 @@ import ManageUsersPage from "./pages/admin/ManageUsersPage";
 import ReportsPage from "./pages/admin/ReportsPage";
 import MoviesPage from "./pages/user/movies/MoviesPage";
 import BooksPage from "./pages/user/books/BooksPage";
+import Login from "./pages/user/auth/Login";
 function App() {
   return (
     <UserProvider>
@@ -35,6 +36,7 @@ function App() {
           <Route path="/registerAdmin" element={<RegisterAdmin />} />
           <Route path="/loginUser" element={<LoginUser />} />
           <Route path="/loginAdmin" element={<LoginAdmin />} />
+          <Route path="/loginall" element={<Login />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/books" element={<Books />} />
           <Route path="/addbooks" element={<AddBookPage />} />

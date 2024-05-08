@@ -1,0 +1,17 @@
+/* MoviesPage.css */
+.movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: flex-start; /* Align grid to the left */
+  }
+  
+  .movie {
+    position: relative;
+  }
+  
+  
+  .movie img:hover {
+    opacity: 0.8;
+  }
+  

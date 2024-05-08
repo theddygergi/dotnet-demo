@@ -121,12 +121,6 @@ function LoginUser() {
           <button className="formButton" onClick={() => navigate("/register")}>
             Register
           </button>
-          <button
-            className="formButton"
-            onClick={() => navigate("/loginAdmin")}
-          >
-            Login as Admin
-          </button>
           {error && (
             <div role="alert">
               <span className="font-medium">Login failed:</span> Wrong email or password.
